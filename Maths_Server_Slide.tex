@@ -77,18 +77,6 @@ To ensure that, we can use htop(talk about it later).
 
 \end{frame}
 
-\begin{frame}[fragile]{Software}
-
-\begin{itemize}
-    \item install anything that does not require root/admin access
-    \item if need additional software, ask the IT team
-    \item more information and licences on software services website\footnotemark
-\end{itemize}
-
-\footnotetext[2]{\tiny{https://intranet.maths.ed.ac.uk/it-support/software}}
-
-\end{frame}
-
 \section{Connect to the Server}
 
 \subsection{Connect using ssh}
@@ -115,28 +103,34 @@ To ensure that, we can use htop(talk about it later).
     \item{
     On \textbf{Linux} or \textbf{Mac}: terminal or \textbf{Windows}: PowerShell
     \begin{itemize}
-        \item Command: ssh UUN@hostname.maths.ed.ac.uk
-        \item{
+        \item {Command: ssh UUN@hostname.maths.ed.ac.uk
+        
         e.g., \underline{ssh s1234567@ssh1.maths.ed.ac.uk} (gateway)
         
         \quad \quad \underline{ssh s1234567@compute64x.maths.ed.ac.uk} (Maths compute)
         }
-        \item login with password
+        \item {login with password to the gateway, 
+        
+        then directly to the compute server}
     \end{itemize}
     }
     \hfill
     \item{
     On \textbf{Windows}: PuTTY, MobaXterm (not recommended)
     \begin{itemize}
-        \item port: 22
-        \item host: hostname.maths.ed.ac.uk
-        \item login with UUN and password
-        \item use the same command as above to connect to Maths compute server
+        \item {port: 22
+        
+        host: hostname.maths.ed.ac.uk 
+        
+        e.g., \underline{ssh s1234567@ssh1.maths.ed.ac.uk} (gateway)}
+        \item {login with UUN and password to the gateway, 
+        
+        then connect to Maths compute server with the same command as above}
     \end{itemize}
     }
 \end{itemize}
 
-\footnotetext[3]{\tiny{https://intranet.maths.ed.ac.uk/it-support/remote-login/howto-ssh}}
+\footnotetext[2]{\tiny{https://intranet.maths.ed.ac.uk/it-support/remote-login/howto-ssh}}
 
 \end{frame}
 
@@ -161,12 +155,12 @@ To ensure that, we can use htop(talk about it later).
         \item {mv: move files or folders (also used as rename)
         
         \quad e.g., mv -r /home/UUN/project /data/UUN/}
-        \item {mkdir: make a directory)
-        
-        \quad e.g., mkdir /data/UUN}
         \item {rm: remove files or folders)
         
         \quad e.g., rm /home/UUN/project/*; rm -rf /*}
+        \item {mkdir: make a directory)
+        
+        \quad e.g., mkdir /data/UUN}
     \end{itemize}
     }
 \end{itemize}
@@ -184,7 +178,7 @@ To ensure that, we can use htop(talk about it later).
 \includegraphics[width = 0.9\textwidth]{images/htop.png}
 \end{figure}
 
-\footnotetext[4]{\tiny{https://htop.dev/}}
+\footnotetext[3]{\tiny{https://htop.dev/}}
 
 \end{frame}
 
@@ -197,7 +191,7 @@ To ensure that, we can use htop(talk about it later).
 \includegraphics[width = 0.9\textwidth]{images/tmux.png}
 \end{figure}
 
-\footnotetext[5]{\tiny{https://github.com/tmux/tmux/wiki}}
+\footnotetext[4]{\tiny{https://github.com/tmux/tmux/wiki}}
 
 \end{frame}
 
@@ -240,7 +234,7 @@ To ensure that, we can use htop(talk about it later).
 
 \hfill
 
-\footnotetext[6]{\tiny{https://www.x.org/wiki/Releases/7.7/}}
+\footnotetext[5]{\tiny{https://www.x.org/wiki/Releases/7.7/}}
 
 \end{frame}
 
@@ -253,8 +247,8 @@ To ensure that, we can use htop(talk about it later).
 \includegraphics[width = 0.8\textwidth]{images/vi.png}
 \end{figure}
 
-\footnotetext[7]{\tiny{https://github.com/vim/vim}}
-\footnotetext[8]{\tiny{https://www.nano-editor.org/}}
+\footnotetext[6]{\tiny{https://github.com/vim/vim}}
+\footnotetext[7]{\tiny{https://www.nano-editor.org/}}
 
 \end{frame}
 
@@ -291,6 +285,44 @@ To ensure that, we can use htop(talk about it later).
 
 \end{frame}
 
+\subsection{software}
+
+\begin{frame}[fragile]{Software}
+
+\begin{itemize}
+    \item the gateway server does not have mathematical software installed
+    \item maths compute server has some compilers installed such as C++, Python, Java 
+    \item it has some mathematical software installed such as Matlab, Mathematica
+    \item it also has optimization solvers\footnotemark such as: 
+        \begin{itemize}
+            \item {CPLEX (/usr/local/cplex/<version>)
+            
+            sign up for the IBM Academic Initiative, 
+            
+            send IT support the confirmation email}
+            \item Xpress (/opt/xpressmp/<version>)
+            \item Gurobi (/usr/local/gurobi/<version>)
+        \end{itemize}
+\end{itemize}
+
+\footnotetext[8]{\tiny{https://intranet.maths.ed.ac.uk/it-support/software/optimization/solvers}}
+
+\end{frame}
+
+\begin{frame}[fragile]{Software}
+
+\begin{itemize}
+    \item {install anything that does not require root/admin access
+    
+    e.g., I installed CPLEX myself... }
+    \item if need additional software, ask the IT team
+    \item more information and licenses on software services website\footnotemark
+\end{itemize}
+
+\footnotetext[9]{\tiny{https://intranet.maths.ed.ac.uk/it-support/software}}
+
+\end{frame}
+
 \subsection{Connect using Remote Desktop}
 
 \begin{frame}[fragile]{Connect using Remote Desktop\footnotemark}
@@ -302,7 +334,7 @@ graphical Linux desktop environment
 \includegraphics[width = 0.7\textwidth]{images/Remote_Desktop.png}
 \end{figure}
 
-\footnotetext[9]{\tiny{https://intranet.maths.ed.ac.uk/it-support/remote-login/linux-remote-desktop}}
+\footnotetext[10]{\tiny{https://intranet.maths.ed.ac.uk/it-support/remote-login/linux-remote-desktop}}
 
 \end{frame}
 
